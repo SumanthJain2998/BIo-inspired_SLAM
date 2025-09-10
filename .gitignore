@@ -1,0 +1,10 @@
+# ROS build, install, and log folders
+build/
+devel/
+install/
+logs/
+
+# Other common temporary files
+*.swp
+*~
+*.pyc
