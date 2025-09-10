@@ -1,0 +1,66 @@
+# RatSLAM configuration - Informed Tuning based on St. Lucia comparison
+
+[general]
+camera_topic = /davis/left/events
+odom_topic = /odom
+
+[ratslam]
+# ----- POSECELL NETWORK -----
+pc_vt_rule = 1
+pc_vtrans_sigma = 1.0
+pc_vtrans_p_max = 0.1
+pc_inhib_rad = 2.0
+pc_weight_sigma = 3.0
+pc_weight_factor = 1.0
+pc_max_firing_age = 1000
+pc_current_exp_decay = 0.1
+pc_current_exp_sigma = 1.0
+pc_e_min = 0.1
+pc_e_max = 1.0
+pc_c_max = 0.5
+pc_num_iterations = 3
+pc_odo_v_sigma = 0.1
+pc_odo_w_sigma = 0.1
+# INFORMED VALUE: Strong but not overwhelming energy injection
+pc_vt_inject_energy = 0.2
+
+# ----- EXPERIENCE MAP -----
+em_max_mem_size = 100000000
+em_fixed_mem_size = false
+em_correction_fact = 0.5
+em_min_e_rad = 1.0
+em_min_pc_rad = 2.0
+em_template_match_thresh = 0.3
+em_loop_closure_thresh = 0.3
+em_exp_trans_thresh = 0.1
+em_rot_range = 360
+em_trans_range = 10.0
+em_min_loop_time = 10.0
+em_slam_frame_id = /world
+em_odom_frame_id = /odom
+
+# ----- LOCAL VIEW CELLS -----
+# INFORMED VALUE: Confirmed that a very low threshold is necessary for SAEs
+lv_match_threshold = 0.1
+# INFORMED VALUE: Confirmed that gain is necessary to amplify differences
+vt_gain = 5.0
+lv_mean_act_threshold = -1.0
+lv_intensity_scale = 1.0
+lv_initial_action = 0.0
+lv_excite_decay = 0.99
+lv_excite_inhib = 0.01
+gs_p_threshold = 0.5
+gs_mean_threshold = 0.5
+gs_std_dev = 3
+lv_dims = 64 64
+lv_num_cells = 200
+
+[draw]
+# ----- GRAPHICS -----
+enable = true
+draw_templates = true
+draw_routes = true
+draw_active_paths = true
+media_path = /home/aman/catkin_ws/src/ratslam_ros/src/media
+
+

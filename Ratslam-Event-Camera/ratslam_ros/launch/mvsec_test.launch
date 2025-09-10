@@ -1,0 +1,27 @@
+<launch>
+    <!-- Define an argument for our configuration file path. This makes it easy to change. -->
+    <arg name="config_file" default="$(find ratslam_ros)/config/config_mvsec_test.txt" />
+
+    <!-- 
+      1. Start our modified Local View node.
+      The C++ code subscribes to "/dvs/events".
+      We remap it to listen to the "/davis/left/events" topic from our bag file.
+    -->
+    <node pkg="ratslam_ros" type="ratslam_lv" name="ratslam_lv" args="$(arg config_file)" output="screen">
+        <remap from="/dvs/events" to="/davis/left/events" />
+    </node>
+
+    <!-- 
+      2. Start the Pose Cell node.
+      It loads all its parameters from the config file.
+    -->
+    <node pkg="ratslam_ros" type="ratslam_pc" name="ratslam_pc" args="$(arg config_file)" output="screen" />
+
+    <!-- 
+      3. Start the Experience Map node.
+      It also loads all its parameters from the config file.
+    -->
+    <node pkg="ratslam_ros" type="ratslam_em" name="ratslam_em" args="$(arg config_file)" output="screen" />
+
+</launch>
+
