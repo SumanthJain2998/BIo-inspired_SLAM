@@ -1,1 +1,0 @@
-Integration of RatSLAM framework with Visual Odometry information, VPR, and [An insect-inspired model facilitating autonomous navigation by incorporating goal approaching and collision avoidance](https://doi.org/10.1016/j.neunet.2023.05.033)
