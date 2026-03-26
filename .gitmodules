@@ -1,0 +1,3 @@
+[submodule "external/ratslam"]
+	path = external/ratslam
+	url = https://github.com/syedamansohrab/Ratslam.git
