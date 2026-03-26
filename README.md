@@ -6,7 +6,7 @@ This repository implements a novel SLAM pipeline that fuses **event camera data*
 
 The architecture is inspired by the rodent hippocampal navigation system (RatSLAM), re-implemented using biologically-plausible liquid dynamics. This is an active research project; a journal paper is in preparation.
 
-> **Sister Repository:** The RatSLAM baseline and direct event integration experiments are developed in [`syedamansohrab/Ratslam`](https://github.com/syedamansohrab/Ratslam). See [Linking the Repositories](#linking-the-repositories) below.
+> **Sister Repository:** The RatSLAM baseline and direct event integration experiments are developed in [`syedamansohrab/Ratslam`](https://github.com/syedamansohrab/Ratslam). 
 
 ---
 
