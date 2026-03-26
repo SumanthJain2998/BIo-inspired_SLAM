@@ -107,30 +107,6 @@ The training loop is stateful: the hidden state is carried across the entire eve
 
 ---
 
-## Linking the Repositories
-
-The RatSLAM baseline and direct event integration work lives in [`syedamansohrab/Ratslam`](https://github.com/syedamansohrab/Ratslam). It is tracked here as a Git submodule under `external/ratslam/`.
-
-**To add the submodule (first time setup):**
-```bash
-git submodule add https://github.com/syedamansohrab/Ratslam.git external/ratslam
-git commit -m "Add Ratslam as submodule"
-git push
-```
-
-**To clone this repo with the submodule included:**
-```bash
-git clone --recurse-submodules https://github.com/<your-username>/Liquid_SLAM.git
-```
-
-**To update the submodule to the latest commit:**
-```bash
-git submodule update --remote external/ratslam
-git commit -m "Update Ratslam submodule"
-```
-
----
-
 ## Related Work
 
 - **Lechner et al. (2020)** — *Neural circuit policies enabling auditable autonomy*. Nature Machine Intelligence.
